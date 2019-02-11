@@ -11,17 +11,28 @@ namespace Task3
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
-            // n - is the size of our array
             int[] a = new int[n];
-            string s = Console.ReadLine();
-            a = s.Split(' ').Select(int.Parse).ToArray();
-            // we make the array with string s and call it how array- a[]
-            for (int i = 0; i < a.Length; i++)
+            //Firstly, we assign the size of our array, how n
+            string[] arr = Console.ReadLine().Split();
+            for (int i = 0; i < n; i++)
             {
-                Console.Write(a[i] + " ");
-                Console.Write(a[i] + " ");
+                a[i] = int.Parse(arr[i]);
             }
-            // in this cycle program will write the numbers with repeating
+            //this cycle do array with numbers in our string
+            int m = n * 2;
+            int[] b = new int[m];
+            //in second array we double previous size and call it m
+            for (int i = 0; i < n; i++)
+            {
+                b[2 * i] = a[i];
+                b[2 * i + 1] = a[i];
+            }
+            //this cycle is the main part of our program, we give the formula of array, where every element is repeated
+            for (int i = 0; i < m; i++)
+            {
+                Console.Write(b[i] + " ");
+            }
+            //and our program give us the repeated numbers 
         }
     }
 }

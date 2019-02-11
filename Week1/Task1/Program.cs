@@ -4,11 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-<<<<<<< HEAD
 namespace Task3
-=======
-namespace ConsoleApp2
->>>>>>> ec40f9c9fe4d54f9a0852dfc06ebb1456fa36e84
 {
     class Program
     {
@@ -18,11 +14,8 @@ namespace ConsoleApp2
             {
                 return false;
             }
-<<<<<<< HEAD
             for (int i = 2; i <= Math.Sqrt(x); i++)
-=======
             for(int i=2; i<=Math.Sqrt(x); i++)
->>>>>>> ec40f9c9fe4d54f9a0852dfc06ebb1456fa36e84
             {
                 if (x % i == 0)
                 {
@@ -41,11 +34,7 @@ namespace ConsoleApp2
             a = s.Split(' ').Select(int.Parse).ToArray();
             // we make the array with string s and call it how array- a[]
             int c = 0;
-<<<<<<< HEAD
-            for (int i = 0; i < a.Length; i++)
-=======
             for (int i=0; i<a.Length; i++)
->>>>>>> ec40f9c9fe4d54f9a0852dfc06ebb1456fa36e84
             {
                 if (IsPrime(a[i]) == true)
                 {
