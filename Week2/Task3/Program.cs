@@ -9,34 +9,32 @@ namespace Task3
 {
     class Program
     {
-        static public string File(string x)
+        static void Open(DirectoryInfo target, int a)
         {
-            string[] files = Directory.GetFiles(x);
-            foreach (string file in files)
+            FileInfo[] files = target.GetFiles();
+            DirectoryInfo[] directories = target.GetDirectories();
+
+            foreach (DirectoryInfo directory in directories)
             {
-                Console.WriteLine(Path.GetFileName(file));
+                for (int i = 0; i < a; ++i)
+                    Console.Write("      ");
+                Console.WriteLine("     " + directory.Name);
+                Open(directory, a + 5);
             }
-            string[] dirs = Directory.GetDirectories(x);
-            foreach (string dir in dirs)
+            foreach (FileInfo file in files)
             {
-                Console.WriteLine(Path.GetFileName(dir));
-                if (Directory.Exists(dir))
-                {
-                    return File(dir);
-                }
-                else
-                {
-                    return File(x);
-                }
+                for (int i = 0; i < a; ++i)
+                    Console.Write("    ");
+                Console.WriteLine("     " + file.Name);
             }
-            return " ";
         }
-        public static void Main()
+        static void Main(string[] args)
         {
-            {
-                string targetDirectory = @"C:\Users\user\Desktop\ICT";
-                File(targetDirectory);   
-            }
+            DirectoryInfo path = new DirectoryInfo(@"C:/Users/user/Desktop/ICT");
+            Console.Write(path.Name);
+            Console.WriteLine("     ");
+            Open(path, 0);
+            Console.ReadKey();
         }
     }
 }
